@@ -1,49 +1,47 @@
-// script.js
-
-// Popup Modals Logic
-const loginModal = document.getElementById("loginModal");
-const signupModal = document.getElementById("signupModal");
-const loginBtn = document.querySelector(".login-btn");
-const signupBtn = document.querySelector(".signup-btn");
-const closeButtons = document.querySelectorAll(".modal .close");
-
-// Open modals
-loginBtn?.addEventListener("click", () => {
-  loginModal.style.display = "flex";
-});
-signupBtn?.addEventListener("click", () => {
-  signupModal.style.display = "flex";
+// NAV MOBILE TOGGLE
+document.querySelector('.mobile-toggle')?.addEventListener('click', () => {
+  const nav = document.querySelector('.nav-links');
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
 });
 
-// Close modals
-closeButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.closest(".modal").style.display = "none";
-  });
-});
+// MODAL LOGIC
+const openBtns = document.querySelectorAll('[data-open]');
+const closeBtns = document.querySelectorAll('[data-close]');
+const switches = document.querySelectorAll('[data-switch]');
 
-// Close on outside click
-window.addEventListener("click", (e) => {
-  if (e.target.classList.contains("modal")) {
-    e.target.style.display = "none";
-  }
+openBtns.forEach(btn => {
+  btn.onclick = () => {
+    document.getElementById(btn.dataset.open).style.display = 'flex';
+  };
 });
-
-// Handle "Get Started" button
-const getStartedBtn = document.querySelector(".get-started");
-getStartedBtn?.addEventListener("click", () => {
-  window.location.href = "dashboard.html"; // Change if needed
+closeBtns.forEach(btn => {
+  btn.onclick = () => {
+    btn.closest('.modal').style.display = 'none';
+  };
 });
+switches.forEach(sp => {
+  sp.onclick = () => {
+    const from = sp.parentElement.parentElement.id;
+    const to = sp.dataset.switch;
+    document.getElementById(from).style.display = 'none';
+    document.getElementById(to).style.display = 'flex';
+  };
+});
+window.onclick = e => {
+  if (e.target.classList.contains('modal')) e.target.style.display = 'none';
+};
 
-// Scroll reveal animation (basic)
-const sections = document.querySelectorAll("section");
-const observer = new IntersectionObserver((entries) => {
+// SCROLL REVEAL
+const items = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("reveal");
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, {
-  threshold: 0.2
-});
-sections.forEach(section => observer.observe(section));
+}, { threshold: 0.15 });
+
+items.forEach(i => io.observe(i));
+
+// REDIRECT AFTER AUTH (demo)
+function redirect() {
+  window.location.href = 'dashboard.html';
+}

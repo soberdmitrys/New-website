@@ -2,69 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CryptoVault - Invest Smarter</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CryptoVault – Invest Smarter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="overlay"></div>
-    <nav class="navbar">
-      <h1 class="logo">CryptoVault</h1>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">CryptoVault</div>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="register.html" class="btn">Get Started</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><button class="btn login" data-open="login">Login</button></li>
+        <li><button class="btn signup" data-open="signup">Get Started</button></li>
       </ul>
-    </nav>
-    <div class="hero-content">
-      <h2>Secure Crypto Investing for the Smart Future</h2>
-      <p>Join CryptoVault and start earning daily profits on your deposits. Built for investors who want more.</p>
-      <a href="register.html" class="hero-btn">Get Started</a>
+      <div class="mobile-toggle">☰</div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <h1 class="reveal">Build Wealth with <span>CryptoVault</span></h1>
+      <p class="reveal delay-1">Join over <strong>100,000</strong> investors growing portfolios with automated daily profits.</p>
+      <div class="cta reveal delay-2">
+        <button class="btn signup" data-open="signup">Get Started</button>
+        <button class="btn outline" data-open="login">Login</button>
+      </div>
     </div>
   </header>
 
-  <!-- FEATURES SECTION -->
+  <!-- FEATURES -->
   <section id="features" class="features">
-    <h2>Why Choose CryptoVault?</h2>
-    <div class="features-grid">
-      <div class="feature-box">
-        <img src="https://img.icons8.com/ios-filled/50/lock.png" alt="Security">
-        <h3>Trusted Security</h3>
-        <p>Military-grade encryption, cold storage, and advanced user protection.</p>
-      </div>
-      <div class="feature-box">
-        <img src="https://img.icons8.com/ios-filled/50/growth.png" alt="Profit">
-        <h3>Daily Profits</h3>
-        <p>Invest and earn passive income every 24 hours. Simple and automated.</p>
-      </div>
-      <div class="feature-box">
-        <img src="https://img.icons8.com/ios-filled/50/crowd.png" alt="Referral">
-        <h3>Referral Bonus</h3>
-        <p>Invite friends and earn a commission on every deposit they make.</p>
+    <div class="container">
+      <h2 class="section-title reveal">Why Choose CryptoVault?</h2>
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <img src="https://img.icons8.com/ios-filled/64/00ffcc/lock--v1.png"/>
+          <h3>Trusted Security</h3>
+          <p>Military-grade encryption, cold storage, 2FA protection.</p>
+        </div>
+        <div class="feature-card reveal delay-1">
+          <img src="https://img.icons8.com/ios-filled/64/00ffcc/graph--v1.png"/>
+          <h3>Daily Profits</h3>
+          <p>Automatically earn passive income every 24 hours.</p>
+        </div>
+        <div class="feature-card reveal delay-2">
+          <img src="https://img.icons8.com/ios-filled/64/00ffcc/share-rounded.png"/>
+          <h3>Referral Bonus</h3>
+          <p>Invite friends and earn commission on their deposits.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT -->
   <section id="about" class="about">
-    <h2>Our Mission</h2>
-    <p>
-      At CryptoVault, we’re changing the way the world invests in crypto. Our platform combines cutting-edge
-      blockchain infrastructure with a simple user experience. We handle everything from wallet management
-      to daily profit distribution — so you can focus on growth.
-    </p>
-    <img src="https://images.unsplash.com/photo-1624298357590-8008efb5a2d3?auto=format&fit=crop&w=1600&q=80" alt="CryptoVault Team">
+    <div class="container">
+      <h2 class="section-title reveal">Our Mission</h2>
+      <div class="about-content">
+        <p class="reveal">Since 2008, CryptoVault has empowered 100,000+ customers to build wealth with crypto. Managing over $2 billion in assets, we combine institutional security with a seamless UX.</p>
+        <img class="reveal delay-1" src="https://images.unsplash.com/photo-1590101942176-c9595c6c983e?auto=format&fit=crop&w=800&q=80" alt="Team at work">
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats" class="stats">
+    <div class="container stats-grid">
+      <div class="stat-card reveal">
+        <h3>17+</h3>
+        <p>Years of Operation</p>
+      </div>
+      <div class="stat-card reveal delay-1">
+        <h3>$2B+</h3>
+        <p>Assets Under Administration</p>
+      </div>
+      <div class="stat-card reveal delay-2">
+        <h3>100K+</h3>
+        <p>Customers Served</p>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>&copy; 2025 CryptoVault Inc. All rights reserved.</p>
+    <div class="container">
+      <p>© 2008–2025 CryptoVault Asset Management · SEC-registered investment advisor</p>
+      <p>For illustrative purposes only. Gold membership $5/month; terms apply.</p>
+    </div>
   </footer>
 
+  <!-- LOGIN MODAL -->
+  <div id="login" class="modal">
+    <div class="modal-content">
+      <button class="close" data-close>×</button>
+      <h2>Login to CryptoVault</h2>
+      <input type="text" placeholder="Email or Username" />
+      <input type="password" placeholder="Password" />
+      <button class="btn signup" onclick="redirect()">Login</button>
+      <p class="switch">Don’t have an account? <span data-switch="signup">Sign Up</span></p>
+    </div>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+  <div id="signup" class="modal">
+    <div class="modal-content">
+      <button class="close" data-close>×</button>
+      <h2>Create Your Account</h2>
+      <input type="text" placeholder="Full Name" />
+      <input type="text" placeholder="Username" />
+      <input type="email" placeholder="Email Address" />
+      <input type="tel" placeholder="Phone Number" />
+      <input type="text" placeholder="Country" />
+      <input type="password" placeholder="Password" />
+      <button class="btn signup" onclick="redirect()">Register</button>
+      <p class="switch">Already have an account? <span data-switch="login">Login</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

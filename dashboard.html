@@ -13,18 +13,18 @@
   <aside class="sidebar">
     <div class="sidebar-logo">CryptoVault</div>
     <nav class="sidebar-nav">
-      <a href="#" class="nav-link active"><img src="icons/home.svg" /> Overview</a>
-      <a href="#"><img src="icons/portfolio.svg" /> Portfolio</a>
-      <a href="#"><img src="icons/transactions.svg" /> Transactions</a>
-      <a href="#"><img src="icons/referrals.svg" /> Referrals</a>
-      <a href="#"><img src="icons/settings.svg" /> Settings</a>
+      <a href="#" class="nav-link active"><img src="assets/icons/home.svg" /> Overview</a>
+      <a href="#"><img src="assets/icons/portfolio.svg" /> Portfolio</a>
+      <a href="#"><img src="assets/icons/transactions.svg" /> Transactions</a>
+      <a href="#"><img src="assets/icons/referrals.svg" /> Referrals</a>
+      <a href="#"><img src="assets/icons/settings.svg" /> Settings</a>
     </nav>
   </aside>
 
   <!-- Topbar for mobile -->
   <div class="topbar">
     <div class="mobile-logo">CryptoVault</div>
-    <div class="hamburger" id="hamburger">☰</div>
+    <div class="hamburger sidebar-toggle" id="hamburger">☰</div>
   </div>
 
   <!-- Main Dashboard Content -->
@@ -60,13 +60,7 @@
     </section>
   </main>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.querySelector('.sidebar');
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('sidebar-open');
-    });
-  </script>
-
+  <!-- ✅ Link to external script -->
+  <script src="script.js"></script>
 </body>
 </html>

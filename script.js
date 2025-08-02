@@ -1,4 +1,4 @@
-// Scroll reveal
+// ✅ Scroll reveal animation
 const reveals = document.querySelectorAll('.reveal');
 window.addEventListener('scroll', () => {
   reveals.forEach((el) => {
@@ -8,12 +8,13 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Modal logic
+// ✅ Modal open/close logic
 const openButtons = document.querySelectorAll('[data-open]');
 const closeButtons = document.querySelectorAll('[data-close], .modal-close');
 const modals = document.querySelectorAll('.modal');
 const switchLinks = document.querySelectorAll('[data-switch]');
 
+// Open modal
 openButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const modal = document.getElementById(btn.dataset.open);
@@ -21,18 +22,21 @@ openButtons.forEach(btn => {
   });
 });
 
+// Close modal
 closeButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     modals.forEach(m => m.style.display = 'none');
   });
 });
 
+// Close modal when clicking outside
 window.addEventListener('click', e => {
   if (e.target.classList.contains('modal')) {
     e.target.style.display = 'none';
   }
 });
 
+// Switch between login/register modals
 switchLinks.forEach(link => {
   link.addEventListener('click', () => {
     modals.forEach(m => m.style.display = 'none');
@@ -50,7 +54,7 @@ if (toggleBtn && sidebar) {
   });
 }
 
-// ✅ Simulated registration redirect (testing only)
+// ✅ Simulated registration flow (before backend)
 const registerBtn = document.querySelector('#signup .btn.signup');
 if (registerBtn) {
   registerBtn.addEventListener('click', (e) => {
@@ -71,7 +75,7 @@ if (registerBtn) {
   });
 }
 
-// ✅ Simulated login redirect (testing only)
+// ✅ Simulated login flow (before backend)
 function redirect() {
   alert("Login successful!");
   window.location.href = "dashboard.html";

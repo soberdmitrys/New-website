@@ -1,107 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CryptoVault Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="dashboard-body">
+<section id="overview" class="section active">
+  <header class="dashboard-header">
+    <div>
+      <h1>Welcome Back, <span class="username">Alex</span> 👋</h1>
+      <p class="subhead">Here’s your crypto summary.</p>
+    </div>
+    <button class="btn signup">+ Deposit</button>
+  </header>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="sidebar-logo">CryptoVault</div>
-    <nav class="sidebar-nav">
-      <a class="nav-link active" data-target="overview"><img src="assets/icons/home.svg" class="icon"/>Overview</a>
-      <a class="nav-link" data-target="portfolio"><img src="assets/icons/portfolio.svg" class="icon"/>Portfolio</a>
-      <a class="nav-link" data-target="transactions"><img src="assets/icons/transactions.svg" class="icon"/>Transactions</a>
-      <a class="nav-link" data-target="referrals"><img src="assets/icons/referrals.svg" class="icon"/>Referrals</a>
-      <a class="nav-link" data-target="account"><img src="assets/icons/settings.svg" class="icon"/>Account</a>
-    </nav>
-  </aside>
+  <!-- Glass-style Cards Row -->
+  <div class="cards glass-cards">
+    <div class="card">
+      <p class="card-label">Total Balance</p>
+      <h2 class="card-value">$24,860.72</h2>
+    </div>
+    <div class="card">
+      <p class="card-label">Active Plans</p>
+      <h2 class="card-value">3</h2>
+    </div>
+    <div class="card">
+      <p class="card-label">Referral Earnings</p>
+      <h2 class="card-value">$420.00</h2>
+    </div>
+  </div>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    <!-- Overview Section -->
-    <section id="overview" class="section active">
-      <header class="dashboard-header">
-        <h1>Welcome Back 👋</h1>
-        <p>Manage your crypto assets.</p>
-      </header>
-      <div class="cards">
-        <div class="card"><h2>Total Balance</h2><p>$—</p></div>
-        <div class="card"><h2>Active Plans</h2><p>—</p></div>
-        <div class="card"><h2>Referral Earnings</h2><p>$—</p></div>
+  <!-- Token Grid -->
+  <h3 class="section-title">Your Assets</h3>
+  <div class="token-grid">
+    <!-- Bitcoin -->
+    <div class="token-card">
+      <img src="assets/icons/btc.svg" alt="BTC" class="token-logo"/>
+      <div class="token-details">
+        <p class="token-name">Bitcoin</p>
+        <p class="token-price">$10,540.00</p>
       </div>
-      <h3>Your Assets</h3>
-      <div class="token-grid">
-        <!-- Example token card -->
-        <div class="token-card">
-          <img src="assets/icons/btc.svg" alt="BTC">
-          <div class="token-info">
-            <h3>Bitcoin</h3>
-            <p>$10,540</p>
-          </div>
-          <button class="menu-btn">⋮</button>
-          <div class="menu-dropdown">
-            <button class="btn">Deposit</button>
-            <button class="btn outline">Withdraw</button>
-          </div>
-        </div>
-        <!-- Repeat for ETH, USDT -->
-        <div class="token-card">
-          <img src="assets/icons/eth.svg" alt="ETH">
-          <div class="token-info"><h3>Ethereum</h3><p>$8,320</p></div>
-          <button class="menu-btn">⋮</button>
-          <div class="menu-dropdown">
-            <button class="btn">Deposit</button>
-            <button class="btn outline">Withdraw</button>
-          </div>
-        </div>
-        <div class="token-card">
-          <img src="assets/icons/usdt.svg" alt="USDT">
-          <div class="token-info"><h3>Tether</h3><p>$6,000</p></div>
-          <button class="menu-btn">⋮</button>
-          <div class="menu-dropdown">
-            <button class="btn">Deposit</button>
-            <button class="btn outline">Withdraw</button>
-          </div>
-        </div>
+      <button class="menu-btn">⋮</button>
+      <div class="menu-dropdown">
+        <button>Deposit</button>
+        <button class="outline">Withdraw</button>
+        <button>View Details</button>
       </div>
-    </section>
-
-    <!-- Portfolio Section (placeholder) -->
-    <section id="portfolio" class="section">
-      <h2>Portfolio</h2>
-      <p>Your investments in one place.</p>
-    </section>
-
-    <!-- Transactions Section (placeholder) -->
-    <section id="transactions" class="section">
-      <h2>Transactions</h2>
-      <p>History of deposits & withdrawals.</p>
-    </section>
-
-    <!-- Referrals Section (placeholder) -->
-    <section id="referrals" class="section">
-      <h2>Referrals</h2>
-      <p>Invite friends & earn rewards.</p>
-    </section>
-
-    <!-- Account Section -->
-    <section id="account" class="section">
-      <h2>Account Settings</h2>
-      <form class="account-form">
-        <label>Email Address</label>
-        <input type="email" placeholder="you@example.com" />
-        <label>Change Password</label>
-        <input type="password" placeholder="New password" />
-        <button class="btn signup">Save Changes</button>
-      </form>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    </div>
+    <!-- Ethereum -->
+    <div class="token-card">
+      <img src="assets/icons/eth.svg" alt="ETH" class="token-logo"/>
+      <div class="token-details">
+        <p class="token-name">Ethereum</p>
+        <p class="token-price">$8,320.00</p>
+      </div>
+      <button class="menu-btn">⋮</button>
+      <div class="menu-dropdown">
+        <button>Deposit</button>
+        <button class="outline">Withdraw</button>
+        <button>View Details</button>
+      </div>
+    </div>
+    <!-- Tether -->
+    <div class="token-card">
+      <img src="assets/icons/usdt.svg" alt="USDT" class="token-logo"/>
+      <div class="token-details">
+        <p class="token-name">Tether</p>
+        <p class="token-price">$6,000.00</p>
+      </div>
+      <button class="menu-btn">⋮</button>
+      <div class="menu-dropdown">
+        <button>Deposit</button>
+        <button class="outline">Withdraw</button>
+        <button>View Details</button>
+      </div>
+    </div>
+  </div>
+</section>

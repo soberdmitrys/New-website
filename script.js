@@ -49,3 +49,30 @@ if (toggleBtn && sidebar) {
     sidebar.classList.toggle('active');
   });
 }
+
+// ✅ Simulated registration redirect (testing only)
+const registerBtn = document.querySelector('#signup .btn.signup');
+if (registerBtn) {
+  registerBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const inputs = document.querySelectorAll('#signup input');
+    let valid = true;
+    inputs.forEach(input => {
+      if (!input.value.trim()) valid = false;
+    });
+
+    if (!valid) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    alert("Registration successful!");
+    window.location.href = "dashboard.html";
+  });
+}
+
+// ✅ Simulated login redirect (testing only)
+function redirect() {
+  alert("Login successful!");
+  window.location.href = "dashboard.html";
+}

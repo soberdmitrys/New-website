@@ -1,72 +1,86 @@
-<section id="overview" class="section active">
-  <header class="dashboard-header">
-    <div>
-      <h1>Welcome Back, <span class="username">Alex</span> 👋</h1>
-      <p class="subhead">Here’s your crypto summary.</p>
-    </div>
-    <button class="btn signup">+ Deposit</button>
-  </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CryptoVault Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard">
 
-  <!-- Glass-style Cards Row -->
-  <div class="cards glass-cards">
-    <div class="card">
-      <p class="card-label">Total Balance</p>
-      <h2 class="card-value">$24,860.72</h2>
-    </div>
-    <div class="card">
-      <p class="card-label">Active Plans</p>
-      <h2 class="card-value">3</h2>
-    </div>
-    <div class="card">
-      <p class="card-label">Referral Earnings</p>
-      <h2 class="card-value">$420.00</h2>
-    </div>
-  </div>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <button class="sidebar-toggle">☰</button>
+    <div class="logo">CryptoVault</div>
+    <nav>
+      <a href="#"><img src="assets/icons/home.svg" class="icon" /> Overview</a>
+      <a href="#"><img src="assets/icons/portfolio.svg" class="icon" /> Portfolio</a>
+      <a href="#"><img src="assets/icons/transactions.svg" class="icon" /> Activity</a>
+      <a href="#"><img src="assets/icons/deposit.svg" class="icon" /> Deposit</a>
+      <a href="#"><img src="assets/icons/withdraw.svg" class="icon" /> Withdraw</a>
+      <a href="#"><img src="assets/icons/account.svg" class="icon" /> Account</a>
+      <a href="#"><img src="assets/icons/settings.svg" class="icon" /> Settings</a>
+    </nav>
+  </aside>
 
-  <!-- Token Grid -->
-  <h3 class="section-title">Your Assets</h3>
-  <div class="token-grid">
-    <!-- Bitcoin -->
-    <div class="token-card">
-      <img src="assets/icons/btc.svg" alt="BTC" class="token-logo"/>
-      <div class="token-details">
-        <p class="token-name">Bitcoin</p>
-        <p class="token-price">$10,540.00</p>
-      </div>
-      <button class="menu-btn">⋮</button>
-      <div class="menu-dropdown">
-        <button>Deposit</button>
-        <button class="outline">Withdraw</button>
-        <button>View Details</button>
+  <!-- Main Dashboard Content -->
+  <main class="main">
+    <div class="topbar">
+      <h2>Dashboard</h2>
+      <div class="user-balance">
+        <p>Total Balance</p>
+        <h3>$24,582.74</h3>
       </div>
     </div>
-    <!-- Ethereum -->
-    <div class="token-card">
-      <img src="assets/icons/eth.svg" alt="ETH" class="token-logo"/>
-      <div class="token-details">
-        <p class="token-name">Ethereum</p>
-        <p class="token-price">$8,320.00</p>
+
+    <!-- Portfolio Performance -->
+    <section class="portfolio-performance">
+      <h3>Portfolio Performance</h3>
+      <div class="performance-chart">
+        <!-- Placeholder for future chart -->
+        <div class="chart-placeholder">📈 Chart Coming Soon</div>
       </div>
-      <button class="menu-btn">⋮</button>
-      <div class="menu-dropdown">
-        <button>Deposit</button>
-        <button class="outline">Withdraw</button>
-        <button>View Details</button>
+    </section>
+
+    <!-- Recent Activity -->
+    <section class="activity-section">
+      <h3>Recent Activity</h3>
+      <div class="activity-list">
+        <div class="activity-item">Received 0.5 ETH - $1,200</div>
+        <div class="activity-item">Bought 100 USDT - $100</div>
+        <div class="activity-item">Withdrawal of 0.1 BTC - $3,000</div>
       </div>
-    </div>
-    <!-- Tether -->
-    <div class="token-card">
-      <img src="assets/icons/usdt.svg" alt="USDT" class="token-logo"/>
-      <div class="token-details">
-        <p class="token-name">Tether</p>
-        <p class="token-price">$6,000.00</p>
+    </section>
+
+    <!-- Token Holdings -->
+    <section class="token-holdings">
+      <h3>My Crypto Assets</h3>
+      <div class="token-grid">
+        <div class="token-card">
+          <img src="assets/icons/btc.svg" alt="BTC" />
+          <div>
+            <h3>Bitcoin (BTC)</h3>
+            <p>Balance: 0.142 BTC ~ $6,420</p>
+          </div>
+        </div>
+        <div class="token-card">
+          <img src="assets/icons/eth.svg" alt="ETH" />
+          <div>
+            <h3>Ethereum (ETH)</h3>
+            <p>Balance: 2.50 ETH ~ $9,800</p>
+          </div>
+        </div>
+        <div class="token-card">
+          <img src="assets/icons/usdt.svg" alt="USDT" />
+          <div>
+            <h3>Tether (USDT)</h3>
+            <p>Balance: 1,000 USDT ~ $1,000</p>
+          </div>
+        </div>
       </div>
-      <button class="menu-btn">⋮</button>
-      <div class="menu-dropdown">
-        <button>Deposit</button>
-        <button class="outline">Withdraw</button>
-        <button>View Details</button>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

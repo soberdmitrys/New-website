@@ -9,101 +9,64 @@
 </head>
 <body class="dashboard-body">
 
-  <!-- SIDEBAR -->
+  <!-- Sidebar -->
   <aside class="sidebar">
-    <div class="logo">CryptoVault</div>
-    <ul class="nav">
-      <li><a href="#">📊 Dashboard</a></li>
-      <li><a href="#">💼 Portfolio</a></li>
-      <li><a href="#">📈 Plans</a></li>
-      <li><a href="#">⚙️ Settings</a></li>
-      <li><a href="#" onclick="logout()">🚪 Logout</a></li>
-    </ul>
+    <div class="sidebar-logo">CryptoVault</div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-link active"><img src="icons/home.svg" /> Overview</a>
+      <a href="#"><img src="icons/portfolio.svg" /> Portfolio</a>
+      <a href="#"><img src="icons/transactions.svg" /> Transactions</a>
+      <a href="#"><img src="icons/referrals.svg" /> Referrals</a>
+      <a href="#"><img src="icons/settings.svg" /> Settings</a>
+    </nav>
   </aside>
 
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
+  <!-- Topbar for mobile -->
+  <div class="topbar">
+    <div class="mobile-logo">CryptoVault</div>
+    <div class="hamburger" id="hamburger">☰</div>
+  </div>
+
+  <!-- Main Dashboard Content -->
+  <main class="dashboard">
     <header class="dashboard-header">
-      <h1>Welcome back 👋</h1>
-      <p>Here’s your portfolio overview</p>
+      <h1>Welcome Back 👋</h1>
+      <p>Manage your crypto assets and monitor performance in real-time.</p>
     </header>
 
-    <section class="portfolio-balance">
-      <div class="balance-card">
-        <h2>Total Portfolio Balance</h2>
-        <p class="amount">$24,860.72</p>
-        <p class="change">+5.2% Today</p>
+    <section class="cards">
+      <div class="card">
+        <h2>Total Balance</h2>
+        <p>$—</p>
+      </div>
+      <div class="card">
+        <h2>Active Plans</h2>
+        <p>—</p>
+      </div>
+      <div class="card">
+        <h2>Referral Earnings</h2>
+        <p>$—</p>
       </div>
     </section>
 
-    <section class="crypto-assets">
-      <h3>Your Assets</h3>
-      <div class="asset-grid">
-        <div class="asset-card">
-          <img src="assets/icons/btc.svg" alt="BTC" />
-          <div>
-            <h4>Bitcoin (BTC)</h4>
-            <p>$10,540.00</p>
-          </div>
-        </div>
-        <div class="asset-card">
-          <img src="assets/icons/eth.svg" alt="ETH" />
-          <div>
-            <h4>Ethereum (ETH)</h4>
-            <p>$8,320.00</p>
-          </div>
-        </div>
-        <div class="asset-card">
-          <img src="assets/icons/usdt.svg" alt="USDT" />
-          <div>
-            <h4>Tether (USDT)</h4>
-            <p>$6,000.00</p>
-          </div>
-        </div>
-      </div>
+    <section class="actions">
+      <button class="btn signup">Deposit</button>
+      <button class="btn outline">Withdraw</button>
     </section>
 
-    <section class="chart-section">
-      <h3>Portfolio Growth</h3>
-      <canvas id="portfolioChart" height="120"></canvas>
+    <section class="empty-portfolio">
+      <h3>No assets yet</h3>
+      <p>Start building your crypto portfolio by making your first deposit.</p>
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    function logout() {
-      localStorage.clear();
-      window.location.href = 'index.html';
-    }
-
-    // Fake chart
-    const ctx = document.getElementById('portfolioChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-          label: 'Portfolio Value',
-          data: [18000, 19200, 20300, 21500, 22400, 23100, 24860],
-          borderColor: '#00ffcc',
-          borderWidth: 2,
-          tension: 0.4,
-          fill: {
-            target: 'origin',
-            above: 'rgba(0,255,204,0.1)'
-          }
-        }]
-      },
-      options: {
-        plugins: {
-          legend: { display: false }
-        },
-        scales: {
-          x: { grid: { display: false } },
-          y: { grid: { color: '#222' } }
-        }
-      }
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('sidebar-open');
     });
   </script>
+
 </body>
 </html>

@@ -6,125 +6,117 @@
   <title>CryptoVault Dashboard</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <button class="sidebar-toggle">☰</button>
-  <div class="dashboard">
-    
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="logo">CryptoVault</div>
-      <nav>
-        <a href="#portfolio"><img class="icon" src="assets/icons/portfolio.svg" /> Portfolio</a>
-        <a href="#deposit"><img class="icon" src="assets/icons/deposit.svg" /> Deposit</a>
-        <a href="#withdraw"><img class="icon" src="assets/icons/withdraw.svg" /> Withdraw</a>
-        <a href="#activity"><img class="icon" src="assets/icons/transactions.svg" /> Activity</a>
-        <a href="#profile"><img class="icon" src="assets/icons/account.svg" /> Account</a>
-        <a href="#security"><img class="icon" src="assets/icons/security.svg" /> Security</a>
-        <a href="#analytics"><img class="icon" src="assets/icons/analytics.svg" /> Stats</a>
-        <a href="#documents"><img class="icon" src="assets/icons/documents.svg" /> Documents</a>
-      </nav>
-    </aside>
+<body class="dashboard">
 
-    <!-- MAIN -->
-    <main class="main">
-      <div class="topbar">
-        <h2>Dashboard</h2>
-        <div class="user-balance">
-          <p>Total Balance</p>
-          <h3>$128,594.23</h3>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="logo">CryptoVault</div>
+    <nav>
+      <a href="#" data-tab="portfolio" class="tab-link active">
+        <img src="assets/icons/portfolio.svg" class="icon" /> Portfolio
+      </a>
+      <a href="#" data-tab="deposit" class="tab-link">
+        <img src="assets/icons/deposit.svg" class="icon" /> Deposit
+      </a>
+      <a href="#" data-tab="withdraw" class="tab-link">
+        <img src="assets/icons/withdraw.svg" class="icon" /> Withdraw
+      </a>
+      <a href="#" data-tab="activity" class="tab-link">
+        <img src="assets/icons/transactions.svg" class="icon" /> Activity
+      </a>
+      <a href="#" data-tab="settings" class="tab-link">
+        <img src="assets/icons/settings.svg" class="icon" /> Settings
+      </a>
+      <a href="#" data-tab="account" class="tab-link">
+        <img src="assets/icons/account.svg" class="icon" /> Account
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <main class="main">
+    <div class="topbar">
+      <h2>Welcome back 👋</h2>
+      <button class="sidebar-toggle">☰</button>
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="tab-buttons">
+      <button class="active" data-tab="portfolio">Portfolio</button>
+      <button data-tab="deposit">Deposit</button>
+      <button data-tab="withdraw">Withdraw</button>
+      <button data-tab="activity">Activity</button>
+      <button data-tab="settings">Settings</button>
+      <button data-tab="account">Account</button>
+    </div>
+
+    <!-- Tab Sections -->
+
+    <section id="portfolio" class="tab-section active">
+      <h3>📊 Your Portfolio</h3>
+      <div class="token-grid">
+        <div class="token-card">
+          <img src="assets/icons/btc.svg" />
+          <div>
+            <h3>Bitcoin (BTC)</h3>
+            <p>Balance: 0.42 BTC</p>
+          </div>
+        </div>
+        <div class="token-card">
+          <img src="assets/icons/eth.svg" />
+          <div>
+            <h3>Ethereum (ETH)</h3>
+            <p>Balance: 3.2 ETH</p>
+          </div>
+        </div>
+        <div class="token-card">
+          <img src="assets/icons/usdt.svg" />
+          <div>
+            <h3>Tether (USDT)</h3>
+            <p>Balance: $4,800</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Portfolio Section -->
-      <section id="portfolio">
-        <h3>Your Portfolio</h3>
-        <div class="token-grid">
-          <div class="token-card">
-            <img src="assets/icons/btc.svg" />
-            <div>
-              <h3>Bitcoin (BTC)</h3>
-              <p>₿ 1.24 ≈ $48,000</p>
-            </div>
-          </div>
-          <div class="token-card">
-            <img src="assets/icons/eth.svg" />
-            <div>
-              <h3>Ethereum (ETH)</h3>
-              <p>Ξ 10.6 ≈ $31,000</p>
-            </div>
-          </div>
-          <div class="token-card">
-            <img src="assets/icons/usdt.svg" />
-            <div>
-              <h3>Tether (USDT)</h3>
-              <p>$22,200.50</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section id="deposit" class="tab-section">
+      <h3>💰 Deposit Funds</h3>
+      <p>Choose a method below to fund your wallet.</p>
+      <!-- You can add forms or QR code logic here -->
+    </section>
 
-      <!-- Deposit Section -->
-      <section id="deposit">
-        <h3>Deposit</h3>
-        <div class="activity-list">
-          <div class="activity-item">Choose network, scan QR or copy wallet to deposit funds.</div>
-        </div>
-      </section>
+    <section id="withdraw" class="tab-section">
+      <h3>💸 Withdraw</h3>
+      <p>Withdraw your crypto or convert to local currency.</p>
+      <!-- Add form or fake withdrawal logic -->
+    </section>
 
-      <!-- Withdraw Section -->
-      <section id="withdraw">
-        <h3>Withdraw</h3>
-        <div class="activity-list">
-          <div class="activity-item">Withdraw your crypto to external wallet securely.</div>
-        </div>
-      </section>
+    <section id="activity" class="tab-section">
+      <h3>📄 Transaction History</h3>
+      <ul>
+        <li>+ 0.02 BTC — Deposit — 3 Aug 2025</li>
+        <li>- $200 USDT — Withdrawal — 30 Jul 2025</li>
+      </ul>
+    </section>
 
-      <!-- Activity Section -->
-      <section id="activity">
-        <h3>Recent Activity</h3>
-        <div class="activity-list">
-          <div class="activity-item">+ $5,000 Deposit (ETH)</div>
-          <div class="activity-item">+ $1,200 Profit Generated</div>
-          <div class="activity-item">– $2,500 Withdrawn (USDT)</div>
-        </div>
-      </section>
+    <section id="settings" class="tab-section">
+      <h3>⚙️ Settings</h3>
+      <ul>
+        <li>🔔 Notification Preferences</li>
+        <li>🌐 Language & Region</li>
+        <li>🔒 Security Settings</li>
+      </ul>
+    </section>
 
-      <!-- Account Section -->
-      <section id="profile">
-        <h3>View Account</h3>
-        <div class="activity-list">
-          <div class="activity-item">Username: vaultuser22</div>
-          <div class="activity-item">Email: user@example.com</div>
-        </div>
-      </section>
-
-      <!-- Security Section -->
-      <section id="security">
-        <h3>Security</h3>
-        <div class="activity-list">
-          <div class="activity-item">Change Password</div>
-          <div class="activity-item">Change Email</div>
-        </div>
-      </section>
-
-      <!-- Analytics Section -->
-      <section id="analytics">
-        <h3>Performance</h3>
-        <div class="performance-chart">
-          (Live charts coming soon...)
-        </div>
-      </section>
-
-      <!-- Documents Section -->
-      <section id="documents">
-        <h3>Documents</h3>
-        <div class="activity-list">
-          <div class="activity-item">Terms of Use</div>
-          <div class="activity-item">Privacy Policy</div>
-        </div>
-      </section>
-    </main>
-  </div>
+    <section id="account" class="tab-section">
+      <h3>👤 My Account</h3>
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>Email:</strong> johndoe@email.com</p>
+      <p><strong>Phone:</strong> +1234567890</p>
+      <button class="btn outline">Change Password</button>
+      <button class="btn outline">Update Email</button>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>

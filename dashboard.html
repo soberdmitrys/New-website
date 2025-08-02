@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CryptoVault Dashboard</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -10,111 +10,85 @@
 
   <!-- Sidebar Navigation -->
   <aside class="sidebar">
-    <div class="logo">CryptoVault</div>
-    <nav>
-      <a href="#" data-tab="portfolio" class="tab-link active">
-        <img src="assets/icons/portfolio.svg" class="icon" /> Portfolio
-      </a>
-      <a href="#" data-tab="deposit" class="tab-link">
-        <img src="assets/icons/deposit.svg" class="icon" /> Deposit
-      </a>
-      <a href="#" data-tab="withdraw" class="tab-link">
-        <img src="assets/icons/withdraw.svg" class="icon" /> Withdraw
-      </a>
-      <a href="#" data-tab="activity" class="tab-link">
-        <img src="assets/icons/transactions.svg" class="icon" /> Activity
-      </a>
-      <a href="#" data-tab="settings" class="tab-link">
-        <img src="assets/icons/settings.svg" class="icon" /> Settings
-      </a>
-      <a href="#" data-tab="account" class="tab-link">
-        <img src="assets/icons/account.svg" class="icon" /> Account
-      </a>
-    </nav>
+   <div class="logo" aria-label="CryptoVault Logo">CryptoVault</div>
+   <nav>
+   <ul>
+   <li><a href="#" data-tab="portfolio" class="tab-link active">
+   <img src="assets/icons/portfolio.svg" class="icon" alt="Portfolio Icon"/> Portfolio
+   </a></li>
+   <li><a href="#" data-tab="deposit" class="tab-link">
+   <img src="assets/icons/deposit.svg" class="icon" alt="Deposit Icon"/> Deposit
+   </a></li>
+   <li><a href="#" data-tab="withdraw" class="tab-link">
+   <img src="assets/icons/withdraw.svg" class="icon" alt="Withdraw Icon"/> Withdraw
+   </a></li>
+   <li><a href="#" data-tab="activity" class="tab-link">
+   <img src="assets/icons/transactions.svg" class="icon" alt="Activity Icon"/> Activity
+   </a></li>
+   <li><a href="#" data-tab="settings" class="tab-link">
+   <img src="assets/icons/settings.svg" class="icon" alt="Settings Icon"/> Settings
+   </a></li>
+   <li><a href="#" data-tab="account" class="tab-link">
+   <img src="assets/icons/account.svg" class="icon" alt="Account Icon"/> Account
+   </a></li>
+   </ul>
+   </nav>
   </aside>
 
   <!-- Main Dashboard -->
   <main class="main">
-    <div class="topbar">
-      <h2>Welcome back 👋</h2>
-      <button class="sidebar-toggle">☰</button>
-    </div>
+   <div class="topbar">
+   <h2>Welcome back, <span aria-hidden="true">👋</span></h2>
+   <button class="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+   </div>
 
-    <!-- Tab Buttons -->
-    <div class="tab-buttons">
-      <button class="active" data-tab="portfolio">Portfolio</button>
-      <button data-tab="deposit">Deposit</button>
-      <button data-tab="withdraw">Withdraw</button>
-      <button data-tab="activity">Activity</button>
-      <button data-tab="settings">Settings</button>
-      <button data-tab="account">Account</button>
-    </div>
+   <!-- Tab Buttons -->
+   <div class="tab-buttons">
+   <button class="active" data-tab="portfolio">Portfolio</button>
+   <button data-tab="deposit">Deposit</button>
+   <button data-tab="withdraw">Withdraw</button>
+   <button data-tab="activity">Activity</button>
+   <button data-tab="settings">Settings</button>
+   <button data-tab="account">Account</button>
+   </div>
 
-    <!-- Tab Sections -->
-    <section id="portfolio" class="tab-section active">
-      <h3>📊 Your Portfolio</h3>
-      <div class="token-grid">
-        <div class="token-card">
-          <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=040" alt="BTC" class="icon" />
-          <div>
-            <h3>Bitcoin (BTC)</h3>
-            <p>Balance: 0.42 BTC</p>
-          </div>
-        </div>
-        <div class="token-card">
-          <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=040" alt="ETH" class="icon" />
-          <div>
-            <h3>Ethereum (ETH)</h3>
-            <p>Balance: 3.2 ETH</p>
-          </div>
-        </div>
-        <div class="token-card">
-          <img src="https://cryptologos.cc/logos/tether-usdt-logo.png?v=040" alt="USDT" class="icon" />
-          <div>
-            <h3>Tether (USDT)</h3>
-            <p>Balance: $4,800</p>
-          </div>
-        </div>
-      </div>
-    </section>
+   <!-- Tab Sections -->
+   <section id="portfolio" class="tab-section active" aria-labelledby="portfolio-heading">
+   <h3 id="portfolio-heading">📊 Your Portfolio</h3>
+   <div class="token-grid">
+   <div class="token-card">
+   <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=040" alt="Bitcoin Logo" class="icon" />
+   <div>
+   <h4>Bitcoin (BTC)</h4>
+   <p>Balance: 0.42 BTC</p>
+   </div>
+   </div>
+   <div class="token-card">
+   <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=040" alt="Ethereum Logo" class="icon" />
+   <div>
+   <h4>Ethereum (ETH)</h4>
+   <p>Balance: 3.2 ETH</p>
+   </div>
+   </div>
+   <div class="token-card">
+   <img src="https://cryptologos.cc/logos/tether-usdt-logo.png?v=040" alt="Tether Logo" class="icon" />
+   <div>
+   <h4>Tether (USDT)</h4>
+   <p>Balance: $4,800</p>
+   </div>
+   </div>
+   </div>
+   </section>
 
-    <section id="deposit" class="tab-section">
-      <h3>💰 Deposit Funds</h3>
-      <p>Choose a method below to fund your wallet. (Add deposit options or QR code here)</p>
-    </section>
+   <section id="deposit" class="tab-section" aria-labelledby="deposit-heading">
+   <h3 id="deposit-heading">💰 Deposit Funds</h3>
+   <p>Choose a method below to fund your wallet. (Add deposit options or QR code here)</p>
+   </section>
 
-    <section id="withdraw" class="tab-section">
-      <h3>💸 Withdraw</h3>
-      <p>Withdraw crypto or convert to fiat. (Add withdraw form here)</p>
-    </section>
+   <section id="withdraw" class="tab-section" aria-labelledby="withdraw-heading">
+   <h3 id="withdraw-heading">💸 Withdraw</h3>
+   <p>Withdraw crypto or convert to fiat. (Add withdraw form here)</p>
+   </section>
 
-    <section id="activity" class="tab-section">
-      <h3>📄 Transaction History</h3>
-      <ul>
-        <li>+ 0.02 BTC — Deposit — 3 Aug 2025</li>
-        <li>- $200 USDT — Withdrawal — 30 Jul 2025</li>
-      </ul>
-    </section>
-
-    <section id="settings" class="tab-section">
-      <h3>⚙️ Settings</h3>
-      <ul>
-        <li>🔔 Notification Preferences</li>
-        <li>🌐 Language & Region</li>
-        <li>🔒 Security Settings</li>
-      </ul>
-    </section>
-
-    <section id="account" class="tab-section">
-      <h3>👤 My Account</h3>
-      <p><strong>Name:</strong> John Doe</p>
-      <p><strong>Email:</strong> johndoe@email.com</p>
-      <p><strong>Phone:</strong> +1234567890</p>
-      <button class="btn outline">Change Password</button>
-      <button class="btn outline">Update Email</button>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+   <section id="activity" class="tab-section" aria-labelledby="activity-heading">
+   <h3 id="activity-heading">📄 Transaction History</h3>
